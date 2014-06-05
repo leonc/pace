@@ -16,9 +16,6 @@ defmodule Pace do
     sec_to_min_sec(sec_left,0,0)
   end
 
-    
-
-
   def mile_to_400(pace) do
     # get a pace as a m:ss format for a mile
     # and convert it to a m:ss for a 400 at 
@@ -42,7 +39,12 @@ defmodule Pace do
 
   end
 
+  def convert(pace) do
+    IO.puts "A mile in #{pace} is 400m in #{mile_to_400(pace)}"
+  end
+
 end
 
-IO.puts "#{Pace.mile_to_400("6:58")}"
+foo = fn s -> IO.puts "A mile @ #{s} is a 400 in #{Pace.mile_to_400(s)}" end
+Enum.each(System.argv, foo)
 
