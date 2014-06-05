@@ -45,6 +45,8 @@ defmodule Pace do
 
 end
 
+# i'll admit i don't know why i had to declare this function this way.
+# TODO: WTF was this about?
 foo = fn s -> IO.puts "A mile @ #{s} is a 400 in #{Pace.mile_to_400(s)}" end
 Enum.each(System.argv, foo)
 
